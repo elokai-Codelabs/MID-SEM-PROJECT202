@@ -4,7 +4,8 @@ import { StyleSheet, Text, View } from "react-native";
 const Login = () => {
   return (
     <View>
-      <Text>Login page</Text>
+      <Text>Login Page</Text>
+      <Text>Welcome to my shop</Text>
     </View>
   );
 };
