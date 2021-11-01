@@ -3,16 +3,27 @@ import { StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons } from "@expo/vector-icons";
+// axios help fetch api request
+import axios from "axios";
+import Product from "../components/Product";
 
 const Home = () => {
-  const [name, setName] = useState("Larbi");
-
+  //create use state for ur products
+  const [products, setProducts] = useState();
   useEffect(() => {
-    // alert(name);
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((data) => setProducts(data.data))
+      .catch((err) => console.log(err.message));
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: "#ddd",
+      }}
+    >
       <View
         style={{
           marginHorizontal: 20,
@@ -24,18 +35,29 @@ const Home = () => {
         }}
       >
         <View>
-          <MaterialIcons
-            onPress={() => setName("Ernest")}
-            name="dashboard"
-            size={28}
-            color="grey"
-          />
+          <MaterialIcons name="dashboard" size={28} color="grey" />
         </View>
         <View>
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>Larbi's Shop</Text>
         </View>
       </View>
-      <ScrollView style={{ flex: 1, backgroundColor: "orange" }}></ScrollView>
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {products &&
+          products.map((prod) => (
+            <Product
+              key={prod.id}
+              image={prod.image}
+              price={prod.price}
+              title={prod.title}
+            />
+          ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
