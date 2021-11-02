@@ -27,7 +27,7 @@ const Home = () => {
       <View
         style={{
           marginHorizontal: 20,
-          width: "60%",
+          width: "65%",
           flexBasis: "15%",
           flexDirection: "row",
           alignItems: "center",
@@ -38,7 +38,7 @@ const Home = () => {
           <MaterialIcons name="dashboard" size={28} color="grey" />
         </View>
         <View>
-          <Text style={{ fontSize: 20, fontWeight: "bold" }}>Larbi's Shop</Text>
+          <Text style={{ fontSize: 22, fontWeight: "bold" }}>Larbi's Shop</Text>
         </View>
       </View>
       <ScrollView
