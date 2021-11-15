@@ -23,7 +23,7 @@ const Login = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: "#ee1",
+        backgroundColor: "#426909",
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
@@ -32,11 +32,14 @@ const Login = ({ navigation }) => {
       <Image
         style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 40 }}
         source={{
-          uri: "https://images.unsplash.com/photo-1556741533-411cf82e4e2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80",
+          uri: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hpcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
         }}
       />
       <Text style={{ fontSize: 25, marginBottom: 20 }}>
         Welcome to Larbi's Shop
+      </Text>
+      <Text style={{ fontSize: 18 }}>
+        Enter anything as password and Username
       </Text>
       <TextInput
         style={styles.input}
