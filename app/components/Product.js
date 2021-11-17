@@ -1,57 +1,74 @@
 import React from "react";
-import { StyleSheet, Text, Image, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text, Image } from "react-native";
+import styled from "styled-components/native";
+import { primaryColor } from "../helpers/Variables";
 
-const Product = ({ image, price, title }) => {
+const Product = ({ title, image, price, submit }) => {
   return (
-    <TouchableOpacity style={styles.productStyle}>
-      <View
-        style={{
-          flexBasis: "30%",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+    <StyledProduct onPress={submit}>
+      <StyledProductImage>
         <Image
-          style={{ width: "100%", height: "50%" }}
+          style={{ width: "100%", height: "100%" }}
           source={{ uri: image }}
         />
-      </View>
-      <View style={{ flex: 1 }}>
-        <View
+      </StyledProductImage>
+      <StyledProductName>
+        <Text
           style={{
-            flexBasis: "50%",
-            justifyContent: "center",
-            alignItems: "center",
-            paddingHorizontal: 10,
+            color: `${primaryColor}`,
+            fontFamily: "Zen-Regular",
+            textAlign: "center",
+            fontSize: 20,
           }}
         >
-          <Text style={{ textAlign: "center", fontSize: 18, color: "#11284d" }}>
-            {title}
-          </Text>
-        </View>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          {title}
+        </Text>
+      </StyledProductName>
+      <StyledProductPrice>
+        <Text
+          style={{
+            color: `${primaryColor}`,
+            fontFamily: "Zen-Regular",
+            textAlign: "center",
+            fontSize: 25,
+            fontWeight: "500",
+          }}
         >
-          <Text style={{ textAlign: "center", fontSize: 20, color: "red" }}>
-            $ {price}
-          </Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+          $ {price}
+        </Text>
+      </StyledProductPrice>
+    </StyledProduct>
   );
 };
 
-export default Product;
+const StyledProduct = styled.TouchableOpacity`
+  background-color: #fff;
+  width: 90%;
+  height: 330px;
+  border-radius: 10px;
+  margin: 10px auto;
+  overflow: hidden;
+  padding: 0 5%;
+`;
 
-const styles = StyleSheet.create({
-  productStyle: {
-    padding: 5,
-    borderRadius: 10,
-    backgroundColor: "#fff",
-    width: "70%",
-    margin: 10,
-    flexDirection: "row",
-    height: 150,
-  },
-});
+const StyledProductImage = styled.View`
+  flex-basis: 60%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledProductName = styled.View`
+  flex-basis: 25%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledProductPrice = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+// const StyledProductRating = styled.View``;
+
+export default Product;
