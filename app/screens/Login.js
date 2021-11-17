@@ -23,19 +23,25 @@ const Login = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: "#426909",
+        backgroundColor: "#ADD8c6",
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
       }}
     >
       <Image
-        style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 40 }}
         source={{
-          uri: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hpcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          uri: "https://media.istockphoto.com/photos/variety-of-fresh-organic-vegetables-and-fruits-in-the-garden-picture-id1280856062?b=1&k=20&m=1280856062&s=170667a&w=0&h=wQu-c2ZjzeCBkAGEj69xpF611lx1i_xim48vOCj_Dw0=",
+        }}
+        style={{
+          width: 180,
+          height: 170,
+          borderRadius: 10,
+          marginBottom: 15,
+          transform: [{ rotate: "20deg" }],
         }}
       />
-      <Text style={{ fontSize: 25, marginBottom: 20 }}>
+      <Text style={{ fontSize: 25, marginBottom: 20, marginTop: 20 }}>
         Welcome to Larbi's Shop
       </Text>
       <Text style={{ fontSize: 18 }}>
